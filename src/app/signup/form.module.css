@@ -1,0 +1,52 @@
+.page h1{
+    margin-top: 40px;
+}
+
+.form{
+    margin-top: 40px;
+    height: 400px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+  
+}
+
+.boxli{
+  
+    height: 100px;
+}
+.boxLabel{
+    margin-bottom: 10px;
+}
+
+.input{
+    outline: none;
+    height: 46px;
+    width: 340px;
+    border-radius: 6px;
+    padding: 16px 16px 16px 12px;
+    font-size: 18px;
+    
+}
+
+.button{
+    height: 36px;
+    width: 120px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(255, 254, 254);
+    font-size:16px;
+    border: none;
+    transition: all ease 0.2s;
+
+}
+
+.button:hover{
+    background-color: rgb(70, 66, 66);
+    color: rgb(255, 254, 254);
+  
+}
