@@ -3,7 +3,9 @@ import Auth from "@/components/Auth"
 export default function SignIn(){
     return (
         <section>
-            <Auth type='signIn'/>
+            <Auth type='signIn'
+            
+            />
         </section>
     )
 }
