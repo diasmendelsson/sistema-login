@@ -6,7 +6,7 @@ import NextAuth from 'next-auth';
 import { authConfig } from './auth.config';
  
 // 1. Especificar rotas protegidas e públicas
-const protectedRoutes = ['/']
+const protectedRoutes = ['/', '/estoque/produtos', '/estoque/cadastar']
 const publicRoutes = ['/sign-in', '/sign-up']
  
 export default async function middleware(req) {

@@ -1,16 +1,17 @@
 import { logout } from "@/lib/action";
+import { MdOutlineLogout } from "react-icons/md";
 
 export default function Logout() {
   return (
      <form
+          className="flex ml-6 mt-28 "
           action={async () => {
             'use server';
             await logout({ redirectTo: '/' });
           }}
         >
-          <button className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3 cursor-pointer">
-          
-            <div className="hidden md:block">Sair</div>
+          <button className="flex items-center justify-center gap-2 rounded-md   cursor-pointer w-26">
+            <div className="flex items-center gap-2 font-bold text-gray-600  hover:text-indigo-400 py-1"><MdOutlineLogout /> Sair</div>
           </button>
         </form>
   );
