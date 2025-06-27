@@ -18,19 +18,20 @@ const pathname = usePathname();
 
 return(
 
-        <div className=  "">
+        <div className="">
 
-            <div className="flex items-center justify-center h-16 text-center bg-indigo-400 px-4">
-                <h1 className="text-white font-bold flex items-center gap-2">Estoque Online <MdInventory /></h1>
+            <div className="flex items-center justify-center h-16 text-center bg-blue-400 px-4 text-white font-bold flex items-center gap-2">
+                <h1 className=" xl:block hidden">Estoque Online </h1>
+                <MdInventory />
             </div>
 
-            <nav className="h-full pt-8 px-8 text-gray-600 flex flex-col gap-4">
+            <nav className="h-3xl pt-8 px-8 text-gray-600 flex flex-col gap-4 ">
                 {sidebarLinks.map((item) => {
                     const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
                     const Icon = item.icon;
 
                     return(
-                        <Link className={cn('flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start',{'bg-indigo-400': isActive})}
+                        <Link className={cn(' flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start',{'bg-blue-400': isActive})}
                          href={item.route}
                          key={item.label}>
                             <div className={cn({'brightness-[3] invert-0 text-white': isActive})}>

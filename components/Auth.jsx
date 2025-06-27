@@ -70,9 +70,9 @@ export default function Auth({ type }) {
 
   return (
 
-    <section className="flex flex-col items-center gap-4">
+    <section className="flex flex-col items-center gap-4  mb-12">
 
-      <h1 className="font-bold text-4xl  text-indigo-400 text-shadow-2xs mt-10 mb-10">Gerencie seu estoque</h1>
+      <h1 className="font-bold text-4xl  text-blue-400 text-shadow-2xs mt-10">Gerencie seu estoque</h1>
       <div className=" mb-8 flex flex-col items-center gap-8 px-8">
         <header className="flex flex-col items-center mt-8">
           <h2 className="mb-2 w-64 text-center font-bold text-2xl text-gray-600">
@@ -89,7 +89,7 @@ export default function Auth({ type }) {
             <div className="flex flex-col w-72">
             <label className="text-gray-600">Nome:</label>
             <input
-                className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                 name="nome"
                 type="text"
                 value={formValues.nome}
@@ -107,7 +107,7 @@ export default function Auth({ type }) {
         <div className="flex flex-col w-72">
             <label className="text-gray-600">Email:</label>
             <input
-            className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
             name="email"
             type="email"
             value={formValues.email}
@@ -125,7 +125,7 @@ export default function Auth({ type }) {
             <label className="text-gray-600">Senha:</label>
             <div className='relative w-full max-w-sm'>
             <input
-            className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            className="w-full px-4 h-8 py-2 pr-10 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
             name="senha"
             type={visivel ? "text" : "password"}
             value={formValues.senha}
@@ -136,7 +136,7 @@ export default function Auth({ type }) {
             <button
                 type="button"
                 onClick={() => setVisivel(!visivel)}
-                className= "cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-indigo-500"
+                className= "cursor-pointer absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-blue-500"
               >
                 {visivel ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
               </button>
@@ -165,19 +165,19 @@ export default function Auth({ type }) {
             <button
               type="submit"
               disabled={isPending}
-              className="px-2 text-indigo-400 font-bold mt-2 border border-stone-400 rounded h-8 w-24 cursor-pointer"
+              className="px-2 text-blue-400 font-bold mt-2 border border-stone-400 rounded h-8 w-24 cursor-pointer"
           >
               {isPending ? loadingLabel : label}
             </button>
     
       
         {/* Link alternativo */}
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-4">
             <p className="font-semibold text-sm text-gray-600">
             {isSignIn ? 'Novo por aqui?' : 'Já tem uma conta?'}
             </p>
             <Link href={!isSignIn ? '/sign-in' : '/sign-up'}>
-            <p className="text-sm font-bold text-indigo-400">
+            <p className="text-sm font-bold text-blue-400">
                 {!isSignIn ? 'Fazer login' : 'Crie sua conta'}
             </p>
             </Link>

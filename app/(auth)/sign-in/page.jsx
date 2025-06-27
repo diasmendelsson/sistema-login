@@ -2,7 +2,7 @@ import Auth from "@/components/Auth"
 
 export default function SignIn(){
     return (
-        <section className="flex flew-row  items-center justify-center h-screen">
+        <section className="flex flex-col items-center justify-center">
             <Auth type='signIn'
             
             />

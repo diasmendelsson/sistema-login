@@ -10,24 +10,36 @@ import { cookies } from "next/headers";
 import Logout from "@/components/Logout";
 
 
+import HeaderBox from "../../components/HeaderBox";
+import TotalBalanceBox from "../../components/TotalBalanceBox";
+
+
 export default async function Home() {
 
 const session = await getSession()
  console.log(session)
 
+ 
+
   return (
     
      <div className="p-8">
-                <h1 className="text-3xl font-bold text-indigo-400 mb-4">Gerencie seu Estoque </h1>
 
-                <div className="mt-8 font-bold text-xl text-gray-600 ">
+          <div className="  ">
+            <header  className="">
+                <HeaderBox
+                  type="saudações"
+                  title="Bem vindo"
+                  user={session.userId.nome || 'Convidado'}
+                  subtext="Acesse e gerencie seu estoque com eficiência"/>
 
-                    {session ? (
-                    <h1>Bem-vindo, { session.userId.nome } </h1>
-                ) : (
-                    <h1>Você não está logado.</h1>
-                )}
-                </div>
+                  <TotalBalanceBox
+                    accouts={[]}
+                    totalBanks={500}
+                    totalCurrentBalance={500245.39}/>
+            </header>
+
+            </div>
        </div>
   );
 }

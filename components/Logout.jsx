@@ -11,7 +11,7 @@ export default function Logout() {
           }}
         >
           <button className="flex items-center justify-center gap-2 rounded-md   cursor-pointer w-26">
-            <div className="flex items-center gap-2 font-bold text-gray-600  hover:text-indigo-400 py-1"><MdOutlineLogout /> Sair</div>
+            <div className="flex items-center gap-2 font-bold text-gray-600  hover:text-blue-400 py-1"><MdOutlineLogout /> Sair</div>
           </button>
         </form>
   );

@@ -25,6 +25,8 @@ export default async function DashEstoque({children}){
 
              <Sidebar />
              <Logout />
+
+             
             </div>
 
             {children}
