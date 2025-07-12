@@ -1,13 +1,14 @@
 
 
-import Link from "next/link"
-import Logout from "@/components/Logout"
+import Link from "next/link";
+import Logout from "@/components/Logout";
 
 import pool from "@/lib/db";
 import { decrypt } from '@/lib/session';
 import { cookies } from "next/headers";
 
-import { getSession } from '@/lib/session'
+import { getSession } from '@/lib/session';
+import { deleteProduto } from "@/lib/deleteProduto";
 
 import Sidebar from "@/components/SideBar";
 
@@ -15,7 +16,7 @@ import Sidebar from "@/components/SideBar";
 export default async function DashEstoque({children}){
 
     const session = await getSession()
-     console.log(session)
+    {/* console.log(session) */}
     
 
     return(

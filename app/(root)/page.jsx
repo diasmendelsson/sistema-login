@@ -10,16 +10,23 @@ import { cookies } from "next/headers";
 import Logout from "@/components/Logout";
 
 
+import contarProduto from '@/lib/contarProduto';
 import HeaderBox from "../../components/HeaderBox";
 import TotalBalanceBox from "../../components/TotalBalanceBox";
 
 
+
+
 export default async function Home() {
 
-const session = await getSession()
- console.log(session)
 
- 
+const session = await getSession();
+const userId = session?.user?.id;
+const resumo = await contarProduto();
+
+
+
+
 
   return (
     
@@ -35,8 +42,8 @@ const session = await getSession()
 
                   <TotalBalanceBox
                     accouts={[]}
-                    totalBanks={500}
-                    totalCurrentBalance={500245.39}/>
+                    totalBanks={resumo.total_unidades}
+                    totalCurrentBalance={resumo.total_estoque}/>
             </header>
 
             </div>

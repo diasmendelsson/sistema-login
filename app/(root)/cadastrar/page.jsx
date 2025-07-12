@@ -12,12 +12,13 @@ const initialState = {
 
 
 
-export default function Cadastrar() {
+export default  function Cadastrar() {
 
 
   const [state, action, isPending] = useActionState( cadastrarProd, initialState );
 
   return (
+
     <main className="mx-auto p-6 w-4xl py-12">
       <h1 className="text-3xl font-bold text-blue-400 mb-8">Cadastrar Produto</h1>
 

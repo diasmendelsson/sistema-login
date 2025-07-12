@@ -9,12 +9,12 @@ export default function DoughnutChart({ accounts }) {
   const data = {
     datasets: [
       {
-        label: 'Produtos',
+        label: 'Categorias',
         data: [1250, 2500, 3500],
         backgroundColor: ['#0747b6', '#2265d8', '#2f91fa']
       }
     ],
-    labels: ['Produto 1', 'Produto 2','Produto 3']
+    labels: ['Categoria 1', 'Categoria 2','Categoria 3']
   }
   return <Doughnut
   data={data}
