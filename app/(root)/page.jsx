@@ -7,6 +7,7 @@ import pool from "@/lib/db";
 import { decrypt } from '@/lib/session';
 import { cookies } from "next/headers";
 
+import { Suspense } from "react";
 import Logout from "@/components/Logout";
 
 
@@ -32,6 +33,8 @@ const resumo = await contarProduto();
     
      <div className="p-8">
 
+      <Suspense fallback={<div>Carregando...</div>}>
+
           <div className="  ">
             <header  className="">
                 <HeaderBox
@@ -47,6 +50,8 @@ const resumo = await contarProduto();
             </header>
 
             </div>
+
+            </Suspense>
        </div>
   );
 }
