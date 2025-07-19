@@ -1,4 +1,5 @@
 
+'use server'
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,9 +21,12 @@ import TotalBalanceBox from "../../components/TotalBalanceBox";
 
 export default async function Home() {
 
-
 const session = await getSession();
-const userId = session?.user?.id;
+
+  // Corrigindo o acesso
+ const userId = session?.user?.id;
+const nome = session?.user?.nome || 'Convidado';
+
 const resumo = await contarProduto();
 
 

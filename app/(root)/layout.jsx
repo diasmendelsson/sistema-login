@@ -15,10 +15,6 @@ import Sidebar from "@/components/SideBar";
 
 export default async function DashEstoque({children}){
 
-    const session = await getSession()
-    {/* console.log(session) */}
-    
-
     return(
         <main className="flex ">
  

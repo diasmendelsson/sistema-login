@@ -6,10 +6,11 @@ import NextAuth from 'next-auth';
 import { authConfig } from './auth.config';
  
 // 1. Especificar rotas protegidas e públicas
-const protectedRoutes = ['/', '/estoque/produtos', '/estoque/cadastar']
+const protectedRoutes = ['/', '/produtos', '/cadastrar']
 const publicRoutes = ['/sign-in', '/sign-up']
  
 export default async function middleware(req) {
+  console.log('Middleware rodando...');
   // 2. Verifique se a rota atual é protegida ou pública
   const path = req.nextUrl.pathname
   const isProtectedRoute = protectedRoutes.includes(path)

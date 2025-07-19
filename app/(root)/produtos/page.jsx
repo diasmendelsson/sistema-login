@@ -1,10 +1,12 @@
- 
+ 'use server'
 // app/produtos/page.js
 import poolCadastro from "@/lib/dbCadastro";
 import { formatAmount } from "@/lib/utils";
 
 import { deleteProduto } from "@/lib/deleteProduto";
 import DeleteProduto from "@/components/DeleteProducts";
+
+import { Suspense } from "react";
 
 import atualizarQuantidade from "@/lib/atualizarQuantidade";
 import { AiFillDelete } from "react-icons/ai";
@@ -14,19 +16,22 @@ import AtualizarQuant from "@/components/AtualizarQuant";
 
 import { getSession } from '@/lib/session'
 import pool from "@/lib/db";
-import { decrypt } from '@/lib/session';
-import { cookies } from "next/headers";
-
-
+import { cookies } from 'next/headers';
 
 export default async function Produtos() {
 
-   const session = await getSession()
-   const userId = session?.user?.id;
 
-  const res = await poolCadastro.query('SELECT * FROM produtos  WHERE usuario_id = $1 ORDER BY id DESC',
+const session = await getSession();
+   
+   
+     // Corrigindo o acesso
+  const userId = session.userId.userId
+  const nome = session?.user?.nome || 'Convidado';
+
+
+   const res = await poolCadastro.query('SELECT * FROM produtos  WHERE usuario_id = $1 ORDER BY id DESC',
     [ session.userId.userId ]);
-  const produtos = res.rows;
+   const produtos = res.rows;
 
 
  
@@ -34,6 +39,10 @@ export default async function Produtos() {
   return (
           <main className="p-6">
            <h1 className="text-3xl font-bold text-blue-400 mb-4">Estoque de Produtos</h1>
+
+                
+          <Suspense fallback={<div>Carregando...</div>}>
+          
      
            {produtos.length === 0 ? ( 
              <p className="text-gray-600">Nenhum produto cadastrado ainda.</p>
@@ -70,6 +79,8 @@ export default async function Produtos() {
                ))}
              </ul>
            )}
+
+           </Suspense>
          </main>
   );
 }

@@ -6,7 +6,7 @@ export default function SignIn(){
     return (
         <section className="flex flex-col items-center justify-center">
 
-            <Suspense fallback={<div>Carregando...</div>}>
+            <Suspense fallback={<div> Carregando...</div>}>
             <Auth type='signIn'
             
             />
